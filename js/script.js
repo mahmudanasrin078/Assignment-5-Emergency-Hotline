@@ -1,4 +1,3 @@
-//console.log("ok");
 // Heart Count
 let heartCount = 0;
 const heartCountBtn = document.getElementById("heart-count");
@@ -20,7 +19,6 @@ for (const copy of copyBtn) {
   copy.addEventListener("click", function () {
     copyCount++;
     copyCountBtn.innerText = copyCount;
-    //alert("Copy Text");
   });
 }
 
@@ -68,13 +66,11 @@ getElement("all-card-box").addEventListener("click", function (e) {
                 </div>
                 `;
 
-    // newCallHistory te add korte hobe
-
     //  Add coin
 
     const coinCount = getElement("coin-count").innerText;
     const currentCoin = Number(coinCount);
-    // getElement("coin-count").innerText = currentCoin;
+
     if (currentCoin === 0) {
       alert("Your coin less then 20 please add some coin");
       return;
