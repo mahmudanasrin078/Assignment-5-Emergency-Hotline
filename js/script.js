@@ -20,7 +20,7 @@ for (const copy of copyBtn) {
   copy.addEventListener("click", function () {
     copyCount++;
     copyCountBtn.innerText = copyCount;
-    alert("Copy Text");
+    //alert("Copy Text");
   });
 }
 
@@ -96,30 +96,6 @@ document.getElementById("clear-btn").addEventListener("click", function () {
   const detailCallHistory = getElement("detail-call-history");
   detailCallHistory.innerHTML = "";
 });
-// document.getElementById(id).addEventListener("click", function () {
-//   //call history add
-
-//   const detailCallHistory = getElement("detail-call-history");
-
-//   // new call history Div
-
-//   const newCallHistory = document.createElement("div");
-
-//   newCallHistory.innerHTML = `
-//                <div class="flex justify-between items-center p-8 bg-[#FAFAFA] rounded-xl">
-// <div>
-//   <h4 class="font-normal">বাংলাদেশ রেলওয়ে</h4>
-//   <p class="">163</p>
-// </div>
-// <div>
-//   <h5>11:36:58 AM</h5>
-// </div>
-//                 </div>`;
-
-//   // newCallHistory te add korte hobe
-
-//   detailCallHistory.append(newCallHistory);
-// });
 
 // Alert button
 
@@ -168,3 +144,66 @@ document
   .addEventListener("click", function () {
     alert("বাংলাদেশ রেলওয়ে      163");
   });
+
+//alert 2
+
+document.getElementById("one").addEventListener("click", function () {
+  alert("জাতীয় জরুরি সেবা       999");
+});
+
+document.getElementById("two").addEventListener("click", function () {
+  alert("পুলিশ       999");
+});
+
+document.getElementById("three").addEventListener("click", function () {
+  alert("ফায়ার সার্ভিস          999");
+});
+
+document.getElementById("four").addEventListener("click", function () {
+  alert("অ্যাম্বুলেন্স      1994-999999");
+});
+
+document.getElementById("five").addEventListener("click", function () {
+  alert("নারী ও শিশু সহায়তা     109");
+});
+
+document.getElementById("six").addEventListener("click", function () {
+  alert("দুদক      106");
+});
+
+document.getElementById("seven").addEventListener("click", function () {
+  alert("বিদ্যুৎ বিভ্রাট      16216");
+});
+
+document.getElementById("eight").addEventListener("click", function () {
+  alert("ব্র্যাক      16445");
+});
+
+document.getElementById("nine").addEventListener("click", function () {
+  alert("বাংলাদেশ রেলওয়ে      163");
+});
+
+// ChatGPT Mamma korche-----
+
+async function copyToClipboard(text) {
+  if (navigator.clipboard && window.isSecureContext) {
+    return navigator.clipboard.writeText(text);
+  } else {
+    const textarea = document.createElement("textarea");
+    textarea.value = text;
+    textarea.style.position = "fixed";
+    document.body.appendChild(textarea);
+    textarea.focus();
+    textarea.select();
+    document.execCommand("copy");
+    document.body.removeChild(textarea);
+  }
+}
+
+document.querySelectorAll(".copy-btn").forEach((btn) => {
+  btn.addEventListener("click", function () {
+    const card = btn.closest(".p-5");
+    const number = card.querySelector("h3").innerText.trim();
+    copyToClipboard(number);
+  });
+});
